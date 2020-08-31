@@ -7,13 +7,13 @@ class Solution:
                 ref[nums[ind]].append(ind)
             else:
                 ref[nums[ind]] = [ind]
-        
+
         for k, v in ref.items():
             if target - k == k:
                 if len(v) >= 2:
-                    ans = [v[0] , v[1]]
+                    ans = [v[0], v[1]]
                     break
             elif target - k in ref:
-                ans = [ v[0], ref[target - k][0]]
-                break       	 
+                ans = [v[0], ref[target - k][0]]
+                break
         return ans
